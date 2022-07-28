@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+
+  <!-- products -->
+{% for object in object_list %}
+  <div class="container">
+    <a href="{{ object.get_absolute_url }}">
+      <div class="card">
+        <h1>{{ object.title }}</h1>
+        <div class="author">
+          <img src="{% static 'images/avatar-person.svg' %}" alt="Avatar" style="width:35px">
+          <p><span>by Flex.</span>Posted {{ object.publish_date|timesince }} ago</p>
+        </div>
+        <img src="{{ object.thumbnail.url }}" alt="post image" style="width:100%">
+        <p>{{ object.content_overview|safe|truncatechars:440 }}</p>
+        <div class="continue-reading">
+          <div class='post-comment'>
+            <span class='post-comment-count'>228</span> 
+            <span class='post-comment-comment'>Comments</span>
+          </div>
+          <div>
+            <button class="card-button  button3">Continue Reading</button>
+          </div>  
+        </div>
+      </div>
+    </a>
+  </div>    
+{% endfor %}
+  <!-- end products -->
+{% endblock content %}
