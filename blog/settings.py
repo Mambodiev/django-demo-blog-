@@ -5,8 +5,8 @@ environ.Env.read_env()
 from pathlib import Path
 SECRET_KEY =env('SECRET_KEY')
 DEBUG = False
-# ALLOWED_HOSTS = ['.demodjangoecom.herokuapp.com']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.demodjangoblog.herokuapp.com']
+# ALLOWED_HOSTS = ['*']
 BASE_DIR = Path(__file__).resolve().parent.parent
 INSTALLED_APPS = [
     'whitenoise.runserver_nostatic',
