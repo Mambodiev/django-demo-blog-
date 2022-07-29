@@ -4,7 +4,7 @@ env = environ.Env()
 environ.Env.read_env()
 from pathlib import Path
 SECRET_KEY =env('SECRET_KEY')
-DEBUG = False
+DEBUG = True
 # ALLOWED_HOSTS = ['.demodjangoblog.herokuapp.com']
 ALLOWED_HOSTS = ['*']
 BASE_DIR = Path(__file__).resolve().parent.parent
